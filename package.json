@@ -1,0 +1,14 @@
+{
+    "name": "",
+    "version": "0.0.1",
+    "homepage": "",
+    "description": "",
+    "author": "",
+    "main": "app.js",
+    "dependencies": {
+        "nodemon": "latest",
+        "express": "latest",
+        "request": "latest",
+        "cheerio": "latest"
+    }
+}
