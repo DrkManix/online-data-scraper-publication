@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+​
+    <script type="text/javascript" src="imdb-output.js"></script>
+
+    <script type="text/javascript" >
+        function loadIMDB() {
+            const div = document.getElementById('data');
+​
+            for(let i = 0; i < imdb_list.length; i++) {
+​
+                if(!(imdb_list[i] === "undefined")) {
+​
+                    img = "<img class='tile' src='" + imdb_list[i] + "'>";
+                    div.innerHTML = div.innerHTML + img;
+​
+                }
+​
+            }
+​
+        }
+    </script>
+    <style>
+        img {
+            height: 100px;
+            width: 65px;
+            margin: 5px;
+        }
+    </style>
+​
+</head>
+<body onload="loadIMDB()">
+<div id="data"></div>
+</body>
+</html>
