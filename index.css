@@ -1,0 +1,74 @@
+html,
+body {
+width: 100%;
+}
+
+* {
+    margin: 0;
+}
+
+img{
+  width: 100%;
+}
+
+body {
+    background-color: white;
+    overflow: hidden;
+}
+
+#wrapper{
+  width: 100%;
+  margin: 0 auto;
+}
+
+.logo{
+  width: 20%;
+  float: left;
+  padding: 5px 10px;
+  font-family: helvetica;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
+  color:#fff;
+  -webkit-animation-name: redti; /* Safari 4.0 - 8.0 */
+     -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+     animation-name: redti;
+     animation-duration: 2s;
+     animation-iteration-count: infinite;
+}
+
+@keyframes redti {
+    0%   { color: #fff;}
+    100% {color: #FF1177;}
+}
+
+.menu-item{
+  width: 75%;
+}
+
+.menu-item ul{
+  float: right;
+  list-style: none;
+}
+
+.menu-area{
+  overflow: hidden;
+}
+
+.menu-area ul li{
+  display: inline-block;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: black;
+}
+
+.menu-area ul li a{
+  display: inline-block;
+
+}
+
+
+
+.content {
+  width: 100%;
+  margin: 0,auto;
+}
