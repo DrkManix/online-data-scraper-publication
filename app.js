@@ -197,7 +197,9 @@ app.get('/instagram', function(req, res){
       res.send(instagram_urls);
 
       // save the data we've stored in our object on our machine
-
+      fs.writeFile('instagram_output.js', "var instagram_output = [" + instagram_data + "]" , function(error){
+        console.log("File is written successfully!");
+      });
     }
   });
 });

@@ -2,6 +2,16 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <script type="text/javascript" src="instagram_output.js"></script>
+  <script type="text/javascript" >
+      function load() {
+          const div = document.getElementByClass('content');
+          for(let i = 0; i < instagram_output.graphql.hashtag.edge_hashtag_to_media.edges.length; i++) {
+              img = "<img class='content' src='"+instagram_output.graphql.hashtag.edge_hashtag_to_media.edges[i].node.display_url+"'>";
+              div.innerHTML = div.innerHTML + img;
+          }
+      }
+  </script>
 
   <title>police</title>
 
@@ -30,17 +40,6 @@
 </header>
 
 <div class="content">
-  <div><img src="images\69771714_993448760995133_6674193569939629244_n.jpg"></div>
-  <div><img src="images\69954214_1364352907072964_20927026876241384_n.jpg"></div>
-  <div><img src="images\70226815_158564895215268_6462202447895245229_n.jpg"></div>
-  <div><img src="images\70379468_150068956213119_4605610889468837834_n.jpg"></div>
-  <div><img src="images\70506893_106238244034204_5409059105983915335_n.jpg"></div>
-  <div><img src="images\70514817_164828124603090_7463176668688981793_n.jpg"></div>
-  <div><img src="images\70589232_673858596438590_4537884158546250561_n.jpg"></div>
-  <div><img src="images\70598063_650459952026520_3514944504882062259_n.jpg"></div>
-  <div><img src="images\70605171_2454346207946561_6411689340772069882_n.jpg"></div>
-  <div><img src="images\70627480_172327797275748_1634503029297846521_n.jpg"></div>
-  <div><img src="images\70665970_411190873128706_8796759970386559625_n.jpg"></div>
 </div>
 
 
