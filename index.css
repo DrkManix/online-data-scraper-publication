@@ -37,7 +37,7 @@ body {
 
 @keyframes redti {
     0%   { color: #fff;}
-    100% {color: #FF1177;}
+    100% {color: blue;}
 }
 
 .menu-item{
