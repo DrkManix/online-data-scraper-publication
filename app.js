@@ -34,16 +34,23 @@ app.get('/guardian', function(req, res) {
       };
 
       // all the content we are looking for are inside a div with the id 'content', let's filter so that the data we are working with is without unnecessary data
-      $('.css-1wa7u5r').filter(function(){
+      // $('.css-1wa7u5r').filter(function(){
+      //
+      //   // we can access the properties of our javascript object by writing the name of the object 'dot' and then the name of the property
+      //   guardian_data.title = $(this).find('h4').text();
+      //   guardian_data.img = $(this).find('img').attr('src');
+      //
+      // });
 
-        // we can access the properties of our javascript object by writing the name of the object 'dot' and then the name of the property
-        guardian_data.title = $(this).find('h4').text();
-        guardian_data.img = $(this).find('img').attr('src');
-
-      });
+      var item_output = [];
+      $('li[data-testid="search-bodega-result"]').filter(function(){
+            // we can access the properties of our javascript object by writing the name of the object 'dot' and then the name of the property
+            item_output.push( { title: $(this).find('h4').text(),
+                                img: $(this).find('img').attr('src') } )
+          });
 
       // send the data we've stored in our object back to the browser
-      res.send(guardian_data);
+      res.send(item_output);
 
       fs.writeFile('guardian_output.js', "var guardian_output = " + JSON.stringify(guardian_data), function(error){
         console.log("File is written successfully!");
@@ -172,14 +179,14 @@ app.get('/instagram', function(req, res){
       var instagram_data = JSON.parse($.text());
       var instagram_urls = [];
 
-      for(var i = 0; i < instagram_data.graphql.hashtag.edge_hashtag_to_media.edges.length; i++) {
+      for ( var i = 0; i < instagram_data.graphql.hashtag.edge_hashtag_to_media.edges.length; i++ ) {
         instagram_urls[i] = instagram_data.graphql.hashtag.edge_hashtag_to_media.edges[i].node.display_url;
 
         download_file_curl(instagram_data.graphql.hashtag.edge_hashtag_to_media.edges[i].node.display_url);
 
-        // fs.createWriteStream('./data/'+[i]+'.jpg', instagram_data.graphql.hashtag.edge_hashtag_to_media.edges[i].node.display_url, function(err){
-        //   console.log('File is written successfully!');
-        // });
+        fs.createWriteStream('./data/'+[i]+'.jpg', instagram_data.graphql.hashtag.edge_hashtag_to_media.edges[i].node.display_url, function(err){
+           console.log('File is written successfully!');
+         });
       }
 
       // send the data we've stored in our array back to the browser
