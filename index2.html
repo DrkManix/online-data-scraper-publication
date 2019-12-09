@@ -8,18 +8,23 @@
     window.onload = function( ) {
       const div = document.getElementsByClassName( 'content' )[ 0 ];
 
-      for ( let i = 0; i < instagram_output.length; i++ ) {
-        let url = instagram_output[ i ];
-        url = url.split( "/" ).pop( );
+      let maxlength = Math.min( instagram_output.length, guardian_output.length );
 
-        img = "<div><img class='content' src='" + url + "'/>"
-        + "<p class='overtexte'>France Strips 7 Police Officers of Guns After Paris Attack</p></div>";
-        div.innerHTML = div.innerHTML + img;
+      for ( let i = 0; i < maxlength; i++ ) {
+        let newsitem = guardian_output[ i ];
+        let title = newsitem.title;
+
+        let image = instagram_output[ i ];
+        let url = image.split( "/" ).pop( );
+
+        let output_html = '<div><img class="content" src="' + url + '"/><p class="overtexte">' + title + '</p></div>';
+
+        document.getElementsByClassName( "content" )[ 0 ].innerHTML += output_html;
       }
     }
   </script>
 
-  <title>police</title>
+  <title>POLICE</title>
 
   <!-- include stylesheets here -->
   <link rel="stylesheet" href="index.css" />
@@ -34,7 +39,10 @@
     <div class="menu-area">
           <div class="menu-item">
             <ul>
-              <li> <h2>Popo</h2> </li>
+              <li> <h1>#POLICE</h1> </li>
+              <audio autoplay loop>
+                <source src="4-13-Block-Fuck-le-17.mp3" type="audio/mpeg">
+              </audio>
             </ul>
           </div>
     </div>
@@ -88,6 +96,7 @@
 <script type="text/javascript" src="http:////code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="slick/slick.min.js"></script>
 <!-- the body ends here -->
+
 </body>
 </html>
 <!-- end of the html document, nothing to see here, move along -->
